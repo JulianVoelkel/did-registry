@@ -28,7 +28,7 @@ contract RegistryContract {
         bytes32 _deviceDID,
         uint256 _physicalID,
         bytes32 _aktDID
-    ) public {
+    ) public returns (bytes32) {
         require(dids[_deviceDID] == 0, "This DID already exists!");
         require(
             registry[_physicalID] == 0,
@@ -39,14 +39,18 @@ contract RegistryContract {
 
         registry[_physicalID] = _deviceDID;
         dids[_deviceDID] = _deviceDID;
+
+    return _deviceDID;
     }
 
-    function getDIDbyPhysicalID(uint256 _physicalID)
-        public
-        view
-        returns (bytes32)
+    function getDIDbyPhysicalID(uint256 _physicalID) public view returns (bytes32)
     {
+        require(registry[_physicalID] != 0, "This DID is not registered");
         return registry[_physicalID];
+    }
+
+    function getValidationContractAddress() public view returns (address){
+        return validationContractAddress;
     }
 
     function checkValidity(uint256 _physicalID, bytes32 _aktDID)

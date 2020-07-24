@@ -890,12 +890,12 @@
     "6545": {
       "events": {},
       "links": {},
-      "address": "0x8CdaF0CD259887258Bc13a92C0a6dA92698644C0",
-      "transactionHash": "0xf43e6f9004d5a8e27c0a5bebdea6f885db320e6bc3bef55f25e0409cdd6a169c"
+      "address": "0x75D0bdbdd794E7679d46dF3369042f8bfC912906",
+      "transactionHash": "0xb53c518359b976a152bd274217b37ebb307fc1cdbb49044ed0bb1f14b3238735"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-07-23T14:35:13.266Z",
+  "updatedAt": "2020-07-24T13:45:56.791Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

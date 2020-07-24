@@ -24,7 +24,7 @@ contract ValidationContract {
 
     mapping(uint256 => uint256) public physicalIDs;
 
-    function setPhysicalID(uint256 _physicalID) public onlyOwner {
+    function setPhysicalID(uint256 _physicalID) public onlyOwner{
         require(
             physicalIDs[_physicalID] == 0,
             "This phyisicalId has already been entered for registering"
@@ -33,14 +33,24 @@ contract ValidationContract {
         physicalIDs[_physicalID] = _physicalID;
     }
 
+    function isEnabled(uint256 _physicalID) public view returns (bool){
+        require(physicalIDs[_physicalID] == _physicalID, "This phyisicalId is not enabled");
+        return true; 
+    }
+
+    function aktDIDisSet() public view returns (bool){
+        require(aktDID != 0, "No AktDID is set");
+
+        return true;
+
+    }
+
     function isAllowed(uint256 _physicalID, bytes32 _aktDID)
         public
         view
         returns (bool)
     {
-        require(
-            physicalIDs[_physicalID] == _physicalID,
-            "This phyisicalId has not been entered for registering"
+        require(physicalIDs[_physicalID] == _physicalID, "This phyisicalId has not been entered for registering"
         );
         require(
             aktDID == _aktDID,
