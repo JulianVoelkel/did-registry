@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >=0.5.0 <0.7.0;
+pragma solidity >=0.4.22 < 0.7.0;
 
 import "./ValidationContract.sol";
 
@@ -11,9 +11,8 @@ contract RegistryContract {
     address owner;
     address public validationContractAddress;
 
-    constructor(address _validationContractAddress) public {
+    constructor() public {
         owner = msg.sender;
-        validationContractAddress = _validationContractAddress;
     }
 
     modifier onlyOwner() {
@@ -60,11 +59,22 @@ contract RegistryContract {
     {
         ValidationContract v = ValidationContract(validationContractAddress);
 
-        bool enabledDeviceAktDid = v.isAllowed(_physicalID, _aktDID);
+        bool enabledDeviceAktDid = v.isAllowed(_aktDID, _physicalID);
 
         require(
             enabledDeviceAktDid == true,
             "This _physicalID is not enabled for registering"
         );
+    }
+    
+        /**
+     * Initially set contract address
+     */
+    function setValidationContractAddress(address newAddress) public onlyOwner {
+        if (validationContractAddress == address(0)) {
+            validationContractAddress = newAddress;
+        } else {
+            revert("Validation contract address can only be set initially.");
+        }
     }
 }

@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const web3utils = require('web3-utils')
 const ethers = require('ethers');
 const fs = require('fs');
-const contract = JSON.parse(fs.readFileSync('../build/contracts/ValidationContract.json', 'utf8'));
+const contract = JSON.parse(fs.readFileSync('./build/contracts/ValidationContract.json', 'utf8'));
 
 const defaultAccount = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
 const validationContractAddress = '0x345cA3e014Aaf5dcA488057592ee47305D9B3e10';
@@ -54,7 +54,7 @@ function setEnabled() {
 
     const physicalId = 54324;
 
-    validationContract.methods.setPhysicalId(physicalId).send(transactionObject)
+    validationContract.methods.setPhysicalID(physicalId).send(transactionObject)
         .on('receipt', function (receipt) {
             console.log("Physical ID: " + physicalId + " sucessfully set.")
         })

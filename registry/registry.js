@@ -1,6 +1,7 @@
 const EthrDID = require('ethr-did');
 const Web3 = require('web3');
 const fs = require('fs');
+
 const contract = JSON.parse(fs.readFileSync('../build/contracts/RegistryContract.json', 'utf8'));
 
 const defaultAccount = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
@@ -25,6 +26,7 @@ const transactionObject = {
 
 const physicalId = 54324;
 const aktDID = 'did:ethr:0xe0e440c1e92c5b73c9be409c50d9fd060f92c04c';
+
 
 
 function createDeviceDID(){
@@ -53,9 +55,6 @@ function registerDID(deviceDID, physicalId, aktDID){
     });
 
 }
-
-
-
 
 
 

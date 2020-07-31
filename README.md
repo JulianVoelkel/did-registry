@@ -2,9 +2,14 @@
 
 # Starting Ganache CLI
 
+docker-compose down -v
+
 docker-compose up -d
 
-docker-compose up
+
+node scripts/sendEth.js
+node scripts/generateAndDeployDIDRegistry.js
+node scripts/getDIDDocument.js 
 
 npm run deploy-contracts
 

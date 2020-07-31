@@ -1,9 +1,8 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >=0.5.0 <0.7.0;
+pragma solidity >=0.4.22 < 0.7.0;
 
 contract ValidationContract {
     address owner;
-    bytes32 aktDID;
 
     constructor() public {
         owner = msg.sender;
@@ -13,50 +12,30 @@ contract ValidationContract {
         require(msg.sender == owner, "Sender does not equal contract owner.");
         _;
     }
+    
+    mapping(bytes32 => mapping (uint256 => bool)) internal enabled;
+    mapping(uint256 => uint256) public pids;
 
-    function setAktDID(bytes32 _aktDID) public onlyOwner {
-        if (aktDID == bytes32(0)) {
-            aktDID = _aktDID;
-        } else {
-            revert("Validation contract address can only be set initially.");
-        }
-    }
-
-    mapping(uint256 => uint256) public physicalIDs;
-
-    function setPhysicalID(uint256 _physicalID) public onlyOwner{
+    function setPhysicalID(bytes32 _aktDID, uint256 _physicalID) public onlyOwner{
+        
+        require(pids[_physicalID] == 0, "This PID has already been enabled!");
+        
         require(
-            physicalIDs[_physicalID] == 0,
+            enabled[_aktDID][_physicalID] == false ,
             "This phyisicalId has already been entered for registering"
         );
-
-        physicalIDs[_physicalID] = _physicalID;
+        
+        enabled[_aktDID][_physicalID] = true; 
+        pids[_physicalID] = _physicalID;
+        
     }
-
-    function isEnabled(uint256 _physicalID) public view returns (bool){
-        require(physicalIDs[_physicalID] == _physicalID, "This phyisicalId is not enabled");
-        return true; 
-    }
-
-    function aktDIDisSet() public view returns (bool){
-        require(aktDID != 0, "No AktDID is set");
-
-        return true;
-
-    }
-
-    function isAllowed(uint256 _physicalID, bytes32 _aktDID)
-        public
-        view
-        returns (bool)
+    
+    function isAllowed(bytes32 _aktDID, uint256 _physicalID) public view returns (bool)
     {
-        require(physicalIDs[_physicalID] == _physicalID, "This phyisicalId has not been entered for registering"
-        );
-        require(
-            aktDID == _aktDID,
-            "This Activation Device is not allowed to register IDs"
-        );
+        require(enabled[_aktDID][_physicalID] == true , "This phyisicalId has not been entered for registering");
 
         return true;
     }
+
+
 }
