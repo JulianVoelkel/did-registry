@@ -2,10 +2,10 @@ const EthrDID = require('ethr-did');
 const Web3 = require('web3');
 const fs = require('fs');
 
-const contract = JSON.parse(fs.readFileSync('../build/contracts/RegistryContract.json', 'utf8'));
+const contract = JSON.parse(fs.readFileSync('./build/contracts/RegistryContract.json', 'utf8'));
 
 const defaultAccount = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
-const registryContractAddress = '0xf25186B5081Ff5cE73482AD761DB0eB0d25abfBF';
+const registryContractAddress = '0x345cA3e014Aaf5dcA488057592ee47305D9B3e10';
 
 
 const provider = new Web3.providers.WebsocketProvider(
@@ -24,39 +24,30 @@ const transactionObject = {
     gas: 800000
 }
 
-const physicalId = 54324;
-const aktDID = 'did:ethr:0xe0e440c1e92c5b73c9be409c50d9fd060f92c04c';
+module.exports = {
+    async registerDID(physicalId, aktDID) {
 
+        const keyPair = new EthrDID.createKeyPair();
+        const deviceDID = new EthrDID({ address: keyPair.address, privateKey: keyPair.privateKey, provider })
+        const hashedAktDID = web3.utils.keccak256(aktDID);
+        const hahsedDeviceDID = web3.utils.keccak256(deviceDID.did);
+        const did = deviceDID.did;
+    
+        const res = await registryContract.methods.registerDevice(hahsedDeviceDID, physicalId, hashedAktDID).send(transactionObject)
+        .on('receipt', function (receipt) {
+            console.log("Device DID: " + deviceDID.did + " sucessfully set.")
 
+        })
+        .on('error', function(error, receipt){
+            console.log(error);
+        });
 
-function createDeviceDID(){
+        return res, did
+    },
 
-    const keyPair = new EthrDID.createKeyPair();
-    const deviceDID = new EthrDID({ address: keyPair.address, privateKey: keyPair.privateKey, provider })
-
-    registerDID(deviceDID, physicalId, aktDID);
-
-}
-
-
-function registerDID(deviceDID, physicalId, aktDID){
-
-    const hashedAktDID = web3.eth.accounts.hashMessage(aktDID);
-    const hahsedDeviceDID = web3.eth.accounts.hashMessage(deviceDID.did);
-
-    console.log(hahsedDeviceDID, physicalId, hashedAktDID)
-
-    registryContract.methods.registerDevice('0xe7293dd4c7febdc344c2a4e385c89b0e3c6d829d028cd171ce4028e4395ba564', physicalId, hashedAktDID).send(transactionObject)
-    .on('receipt', function (receipt) {
-        console.log("Device DID: " + deviceDID.did + " sucessfully set.")
-    })
-    .on('error', function(error, receipt){
-        console.log(error);
-    });
 
 }
 
 
 
-createDeviceDID();
 

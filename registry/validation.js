@@ -1,14 +1,11 @@
 const EthrDID = require('ethr-did');
 const Web3 = require('web3');
 const web3utils = require('web3-utils')
-const ethers = require('ethers');
 const fs = require('fs');
 const contract = JSON.parse(fs.readFileSync('./build/contracts/ValidationContract.json', 'utf8'));
 
 const defaultAccount = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
-const validationContractAddress = '0x345cA3e014Aaf5dcA488057592ee47305D9B3e10';
-
-
+const validationContractAddress = '0xf25186B5081Ff5cE73482AD761DB0eB0d25abfBF';
 
 const provider = new Web3.providers.WebsocketProvider(
     'ws://127.0.0.1:7545',
@@ -27,46 +24,28 @@ const transactionObject = {
     gas: 800000
 }
 
-function createAktDID() {
 
-    const keyPair = new EthrDID.createKeyPair();
-    const aktDID = new EthrDID({ address: keyPair.address, privateKey: keyPair.privateKey, provider })
+module.exports = {
+    async setPID(aktDID, physicalId) {
 
-    setAktDID(aktDID);
-}
+        const pid = await validationContract.methods.setPhysicalID(web3utils.keccak256(aktDID), physicalId).send(transactionObject)
+            .on('receipt', function (receipt) {
+                console.log("AktDID" + aktDID + " sucessfully set.")
+                console.log("Physical ID: " + physicalId + " sucessfully set.")
+            })
+            .on('error', function (error, receipt) {
+                console.log(error);
+            });
 
-function setAktDID(aktDID) {
+        return pid
+    },
+    createAktDID() {
 
-    const hashedDID = web3.eth.accounts.hashMessage(aktDID.did);
+        const keyPair = new EthrDID.createKeyPair();
+        const aktDID = new EthrDID({ address: keyPair.address, privateKey: keyPair.privateKey, provider })
 
-    validationContract.methods.setAktDID(hashedDID).send(transactionObject)
-    .on('receipt', function(receipt){
-        console.log("AktDID: " + aktDID.did + " sucessfully set.")
-    })
-    .on('error', function(error, receipt){
-        console.log(error);
-    });
+        return aktDID
 
-}
-
-
-function setEnabled() {
-
-    const physicalId = 54324;
-
-    validationContract.methods.setPhysicalID(physicalId).send(transactionObject)
-        .on('receipt', function (receipt) {
-            console.log("Physical ID: " + physicalId + " sucessfully set.")
-        })
-        .on('error', function(error, receipt){
-            console.log(error);
-        });
-
+    }
 
 }
-
-
-
-//createAktDID();
-
-setEnabled();

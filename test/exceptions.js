@@ -15,11 +15,8 @@ module.exports = {
     catchRevert            : async function(promise) {await tryCatch(promise, "revert"                              );},
     catchNoDIDRegistered   : async function(promise) {await tryCatch(promise, "revert This DID is not registered"   );}, 
     catchPIDNotEnabled     : async function(promise) {await tryCatch(promise, "revert This phyisicalId has not been entered for registering -- Reason given: This phyisicalId has not been entered for registering."   );}, 
-    catchAktDIDNotAllowed  : async function(promise) {await tryCatch(promise, "revert This Activation Device is not allowed to register IDs -- Reason given: This Activation Device is not allowed to register IDs." );}, 
-    catchOutOfGas          : async function(promise) {await tryCatch(promise, "out of gas"                          );},
-    catchInvalidJump       : async function(promise) {await tryCatch(promise, "invalid JUMP"                        );},
-    catchInvalidOpcode     : async function(promise) {await tryCatch(promise, "invalid opcode"                      );},
-    catchStackOverflow     : async function(promise) {await tryCatch(promise, "stack overflow"                      );},
-    catchStackUnderflow    : async function(promise) {await tryCatch(promise, "stack underflow"                     );},
-    catchStaticStateChange : async function(promise) {await tryCatch(promise, "static state change"                 );},
+    catchPIDexists         : async function(promise) {await tryCatch(promise, "revert This PID already exists! -- Reason given: This PID already exists!"   );}, 
+    catchPIDregistered     : async function(promise) {await tryCatch(promise, "revert This phyisicalId has already been entered for registering -- Reason given: This phyisicalId has already been entered for registering"   );}, 
+
+
 };

@@ -6,3 +6,13 @@ services:
         command: bash "ganache-cli -h 0.0.0.0" --db ./ --deterministic -i "6545" -l "90000000" --allowUnlimitedContractSize --mnemonic "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
         ports:
             - '7545:8545'
+    registry:
+        container_name: registry
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - '4400:4400'
+        volumes:
+            - '.:/did-registry'
+            - '/did-registry/node_modules'          

@@ -28,47 +28,30 @@ contract('RegistryContract', function (accounts) {
         })
     });
 
-    it("should be able to set PID for registration", async function () {
-        await validationContract.setPhysicalID(INITIAL_PHYSICALID).then(function () {
-        })
-    });
-
-    it("should throw error if Device is not allowed to register DIDs", async function () {
-        await exceptions.catchAktDIDNotAllowed(registryContract.registerDevice(INITIAL_HASHED_DID, INITIAL_PHYSICALID, INITIAL_HASHED_AKT_DID))
-    });
-
-    it("should be able to enable Aktivation Device", async function () {
-        await validationContract.setAktDID(INITIAL_HASHED_AKT_DID).then(function () {
-        })
-    });
-
     it("Should throw error if PID is not enabled for registering", async function () {
         await exceptions.catchPIDNotEnabled(registryContract.registerDevice(INITIAL_HASHED_DID, WRONG_PHYSICALID, INITIAL_HASHED_AKT_DID))
     });
 
-    it("should be able to register Device-DID for enabled PID", async function () {
+    it("should be able to create and register Device-DID for enabled PID", async function () {
+        await validationContract.setPhysicalID(INITIAL_HASHED_AKT_DID, INITIAL_PHYSICALID).then(function () {
+        });
         await registryContract.registerDevice(INITIAL_HASHED_DID, INITIAL_PHYSICALID, INITIAL_HASHED_AKT_DID).then(function () {
         })
     });
 
 
-    it("should throw Error if no DID is registered for a PID", async function () {
-        await exceptions.catchNoDIDRegistered(registryContract.getDIDbyPhysicalID(WRONG_PHYSICALID))
-    });
-
-
-    it("should return DID for according PID", async function () {
+    it("should be able to get DID for according PID", async function () {
         await registryContract.getDIDbyPhysicalID(INITIAL_PHYSICALID).then(function (res) {
             assert.equal(res, INITIAL_HASHED_DID, 'wrong did returned')
         })
     });
 
-
-
-
-
-
-
+    it("should throw Error if no DID is registered for a PID", async function () {
+        await exceptions.catchNoDIDRegistered(registryContract.getDIDbyPhysicalID(WRONG_PHYSICALID))
+    });
 });
+
+
+
 
 

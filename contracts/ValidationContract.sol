@@ -17,13 +17,14 @@ contract ValidationContract {
     mapping(uint256 => uint256) public pids;
 
     function setPhysicalID(bytes32 _aktDID, uint256 _physicalID) public onlyOwner{
-        
-        require(pids[_physicalID] == 0, "This PID has already been enabled!");
-        
+                
         require(
             enabled[_aktDID][_physicalID] == false ,
             "This phyisicalId has already been entered for registering"
         );
+
+        require(pids[_physicalID] == 0, "This PID already exists!");
+
         
         enabled[_aktDID][_physicalID] = true; 
         pids[_physicalID] = _physicalID;

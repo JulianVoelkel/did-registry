@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-contracts": "truffle migrate --reset --network development"
+    "deploy-contracts": "truffle migrate --reset --network development && node scripts/generateAndDeployDIDRegistry.js",
+    "dev": "nodemon ./bin/www",
+    "start": "truffle migrate --reset --network development && node scripts/generateAndDeployDIDRegistry.js && nodemon ./bin/www",
+    "docker": "truffle migrate --reset --network dockernache && node scripts/generateAndDeployDIDRegistry.js && nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -26,8 +29,16 @@
     "ethr-did-registry": "0.0.3",
     "ethr-did-resolver": "^2.3.2",
     "ls": "^0.2.1",
+    "sequelize": "^6.3.3",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.1.4",
     "truffle": "^5.1.35",
     "web3": "^1.2.11",
-    "web3-utils": "^1.2.11"
+    "web3-utils": "^1.2.11",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
   }
 }

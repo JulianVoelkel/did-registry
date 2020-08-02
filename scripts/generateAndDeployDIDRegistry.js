@@ -1,32 +1,45 @@
 #!/bin/env node
 
 const Web3 = require('web3');
-const fs = require('fs');
-const web3utils = require('web3-utils')
-
 const Transaction = require('ethereumjs-tx')
 const EthUtils = require('ethereumjs-util')
 const ls = require('ls')
+const fs = require('fs');
 
-
-const defaultAccount = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
-const ethereumDIDRegistryAdress = '0x2d417e9134fe6633b6603bbb6f40b73605c0d946';
-
-const rawValue = '0.02811144';
-const senderAddress = '0x228fbdce9c499047375ae2e3a1c24905651f3a91';
-
-// const privateKey = Buffer.from('08d5366123cb560bb606379f90a0bfd4769eecc0557f1b362dcae9012b548b1', 'hex')
-// const signerAddress = '0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE'
-
-
+const contract = JSON.parse(fs.readFileSync('./build/contracts/EthereumDIDRegistry.json', 'utf8'));
                             
 const privateKey = Buffer.from('a285ab66393c5fdda46d6fbad9e27fafd438254ab72ad5acb681a0e9f20f5d7b', 'hex')
 const signerAddress = '0x2036c6cd85692f0fb2c26e6c6b2eced9e4478dfd'
+
+const defaultAccount = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
+const ethereumDIDRegistryAdress = '0x57db4883e7967a14a1cabb628e140ced3ca315a6';
+
+const senderAddress = '0x228fbdce9c499047375ae2e3a1c24905651f3a91';
 
 const provider = new Web3.providers.WebsocketProvider(
   'ws://127.0.0.1:7545',
   { clientConfig: { keepalive: true, keepaliveInterval: 5000 } });
 web3 = new Web3(provider, null, { transactionConfirmationBlocks: 1 });
+
+const ethereumDIDRegistry = new web3.eth.Contract(
+  contract.abi, ethereumDIDRegistryAdress);
+
+const transactionObject = {
+  from: defaultAccount,
+  to: senderAddress,
+  gasPrice: 0,
+  gas: 800000,
+  value: '0028111440000000000',
+}
+
+sendValue = () => {
+  
+  console.log('transfering value for deployment')
+
+  web3.eth.sendTransaction(transactionObject, function (error, result) {
+      console.log(error, result);
+  });
+}
 
 
 const gasLimits = {
@@ -54,25 +67,13 @@ generateDeployTx = (code, name) => {
     costInEther: (parseInt(rawTx.gasPrice) * parseInt(rawTx.gasLimit)) / 1000000000000000000,
     contractAddress: '0x' + EthUtils.generateAddress('0x' + tx.getSenderAddress().toString('hex'), 0).toString('hex'),
 
-
-
   }
-
-  web3.eth.getBalance('0x228fbdce9c499047375ae2e3a1c24905651f3a91', function(error, result) {
-    console.log(error, result)
-  });
-
-  console.log('****' + res.senderAddress);
 
   console.log("deploying contract: " + res.contractAddress)
 
   web3.eth.sendSignedTransaction(res.rawTx, function (error, result) {
-
-    console.log(result, error)
-
+    console.log(error, result);
   });
-
-
 
   return res
 }
@@ -93,10 +94,8 @@ generateAll = () => {
 module.exports = generateAll
 
 
-
-
-
 if (require.main === module) {
+  sendValue();
   const deployData = generateAll()
   for (const name in deployData) {
     console.log('\n\x1b[31m ======= Contract:', name, '=======\x1b[0m')

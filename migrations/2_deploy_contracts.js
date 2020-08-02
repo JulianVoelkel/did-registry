@@ -1,6 +1,5 @@
 const RegistryContract = artifacts.require("RegistryContract");
 const ValidationContract = artifacts.require("ValidationContract");
-const EthereumDIDRegistry = artifacts.require("EthereumDIDRegistry");
 
 
 module.exports = function(deployer) {
