@@ -30,4 +30,26 @@ const config = require('../config/config');
  */
 router.get('/:did/document', didService.getDIDDocument);
 
+/**
+ * @swagger
+ *
+ * '/api/v1/dids/attribute/{did}':
+ *   post:
+ *     tags:
+ *       - DID Attribute
+ *     summary: Set an attribute of a did
+ *     consumes: []
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: did
+ *         in: path
+ *         required: true
+ *         type: string
+ *     responses:
+ *       '200':
+ *         description: OK
+ */
+router.post('/attribute/:did', didService.setAttribute);
+
 module.exports = router;

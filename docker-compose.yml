@@ -3,11 +3,13 @@ services:
     ganachecli:
         image: trufflesuite/ganache-cli:latest
         restart: always
-        command: bash "ganache-cli -h 0.0.0.0" --db ./ --deterministic -i "6545" -l "90000000" --allowUnlimitedContractSize --mnemonic "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
+        command: ganache-cli --db ./ --deterministic -i "6545" -l "90000000" --allowUnlimitedContractSize --mnemonic "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
         ports:
             - '7545:8545'
     registry:
         container_name: registry
+        environment: 
+            - NODE_ENV=dev 
         build:
             context: .
             dockerfile: Dockerfile

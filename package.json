@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "truffle test",
     "deploy-contracts": "truffle migrate --reset --network development && node scripts/generateAndDeployDIDRegistry.js",
     "dev": "nodemon ./bin/www",
-    "start": "truffle migrate --reset --network development && node scripts/generateAndDeployDIDRegistry.js && nodemon ./bin/www",
-    "docker": "truffle migrate --reset --network dockernache && node scripts/generateAndDeployDIDRegistry.js && nodemon ./bin/www"
+    "start": "truffle migrate --reset --network development && nodemon ./bin/www",
+    "docker": "truffle migrate --reset --network dockernache && nodemon ./bin/www"
   },
   "repository": {
     "type": "git",

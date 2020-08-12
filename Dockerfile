@@ -1,7 +1,6 @@
 # base image
 FROM node:12
 
-
 # set path for global dependencies in non-root user directory
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 

@@ -7,7 +7,7 @@ const config = require('../config/config');
 /**
  * @swagger
  *
- * '/api/v1/registration/{pid}/{aktdid}':
+ * '/api/v1/registration/{aktdid}':
  *   post:
  *     tags:
  *       - Register Device-DID
@@ -16,21 +16,25 @@ const config = require('../config/config');
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: pid
- *         in: path
- *         required: true
- *         type: string
- *       - name: aktdid
- *         in: path
- *         required: true
- *         type: string
- *         schema:
- *           $ref: '#/definitions/devicedid'
+ *        - in: path
+ *          name: aktdid
+ *          required: true
+ *          type: string
+ *        - in: body
+ *          name: pid
+ *          description: The PID to register.
+ *          schema:
+ *            type: object
+ *            required:
+ *              - pid
+ *            properties:
+ *              pid:
+ *                type: string
  *     responses:
  *       '200':
  *         description: OK
  */
-router.post('/:pid/:aktdid', registrationService.registerDID);
+router.post('/:aktdid', registrationService.registerDID);
 
 
 module.exports = router;

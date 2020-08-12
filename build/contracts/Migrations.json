@@ -894,11 +894,12 @@
       "events": {},
       "links": {},
       "address": "0x8CdaF0CD259887258Bc13a92C0a6dA92698644C0",
-      "transactionHash": "0x8feded1ba0b57f3cd5528e747e5c03b738b83800c91df204c2336d4167aab224"
+      "transactionHash": "0xb5fb8f5dd80af2611c75f6b4eddfdd9e75187a31bf277ed0e2733596b5585c34"
     }
   },
   "schemaVersion": "3.2.2",
-  "updatedAt": "2020-08-02T13:22:41.836Z",
+  "updatedAt": "2020-08-12T14:02:00.616Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

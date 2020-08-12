@@ -6,9 +6,7 @@ module.exports = {
     registerDID(req, res) {
 
       var aktdid = req.params.aktdid
-      var pid = parseInt(req.params.pid, 10)
-
-      console.log(req.params.pid ,pid)
+      var pid = req.body.pid
 
       registration.registerDID(pid, aktdid)
       .then( x => {

@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "8dd05327-0144-42fa-aad9-444ee214afd6",
+		"name": "did-registry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validation",
+			"item": [
+				{
+					"name": "createAktDID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "45870983-d6bf-4b54-90c4-36fb299031e0",
+								"exec": [
+									"postman.setEnvironmentVariable(\"aktdid\", responseBody);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4400/api/v1/validation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4400",
+							"path": [
+								"api",
+								"v1",
+								"validation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register PID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "aktdid",
+								"value": "did:ethr:0x0da3369dc722c2f0e7ed877e342e4a1d466e94d2",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pid\": \"11-80-41-ae-fd-7e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4400/api/v1/validation/register/{{aktdid}}?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4400",
+							"path": [
+								"api",
+								"v1",
+								"validation",
+								"register",
+								"{{aktdid}}"
+							],
+							"query": [
+								{
+									"key": "aktdid",
+									"value": "did:ethr:0x0da3369dc722c2f0e7ed877e342e4a1d466e94d2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "registerDevice",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eb02c2c3-092b-46eb-acd1-1d38f5450a48",
+								"exec": [
+									"postman.setEnvironmentVariable(\"devicedid\", responseBody);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pid\": \"11-80-41-ae-fd-7e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4400/api/v1/registration/{{aktdid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4400",
+							"path": [
+								"api",
+								"v1",
+								"registration",
+								"{{aktdid}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Dids",
+			"item": [
+				{
+					"name": "getDIDDocument",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4400/api/v1/dids/{{devicedid}}/document",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4400",
+							"path": [
+								"api",
+								"v1",
+								"dids",
+								"{{devicedid}}",
+								"document"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -17,6 +17,4 @@ module.exports = {
     catchPIDNotEnabled     : async function(promise) {await tryCatch(promise, "revert This phyisicalId has not been entered for registering -- Reason given: This phyisicalId has not been entered for registering."   );}, 
     catchPIDexists         : async function(promise) {await tryCatch(promise, "revert This PID already exists! -- Reason given: This PID already exists!"   );}, 
     catchPIDregistered     : async function(promise) {await tryCatch(promise, "revert This phyisicalId has already been entered for registering -- Reason given: This phyisicalId has already been entered for registering"   );}, 
-
-
 };
