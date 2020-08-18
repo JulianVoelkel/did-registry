@@ -17,11 +17,11 @@ module.exports = {
         res.status(400).send(Object.entries(error.data)[0][1].reason);
       });
   },
-  createAktDID(req, res) {
+  async createAktDID(req, res) {
 
-    const aktDID = validation.createAktDID()
+    const aktDID = await validation.createAktDID()
 
-    return res.send(aktDID.did)
+    return res.send(aktDID)
 
   },
   registerMultiple(req, res) {

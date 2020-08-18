@@ -39,6 +39,7 @@ docker-compose down -v
 * Manufacturer (Registers the DeviceDID using the physicalID and the aktDID)
     * address: 0x6330A553Fc93768F612722BB8c2eC78aC90B3bbc
     * deployer of the RegistryContract
+    * can only use an activation device to register the DeviceDID
 
 
 ## Running the Scenario (Postman)

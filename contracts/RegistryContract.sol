@@ -14,38 +14,41 @@ contract RegistryContract {
     address owner;
     address public validationContractAddress;
 
-    constructor() public {
+    constructor(address _validationContractAddress) public {
         owner = msg.sender;
+        validationContractAddress = _validationContractAddress;
     }
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Sender does not equal contract owner.");
+    modifier onlyActivationDevice(address _activationDevice) {
+        require(msg.sender == _activationDevice, "Sender does not equal Activation Device.");
         _;
     }
 
     mapping(bytes32 => bytes32) public registry;
-    mapping(bytes32 => bytes32) public dids;
+    mapping(bytes32 => bool) public dids;
 
-    /// @notice A function to register the DID
-    /// @param _deviceDID The devices DID to be registered
-    /// @param _physicalID The devices according physicalID
+    /// @notice A function to register the DID which is only callable by the activation device itself
+    /// @param _deviceDID The device's DID to be registered
+    /// @param _physicalID The device's according physicalID
     /// @param _aktDID The DID of the used Activation Device
     /// @return The registered DID
     function registerDevice(
         bytes32 _deviceDID,
         bytes32 _physicalID,
-        bytes32 _aktDID
-    ) public returns (bytes32) {
-        require(dids[_deviceDID] == 0, "This DID already exists!");
+        bytes32 _aktDID,
+        address _activationDevice
+    ) public onlyActivationDevice(_activationDevice) returns (bytes32) {
+
+        require(dids[_deviceDID] == false, "This DID already exists!");
         require(
             registry[_physicalID] == 0,
-            "Theres already a DID registered for this pyhsicalId!"
+            "There's already a DID registered for this physicalId!"
         );
 
         checkValidity(_physicalID, _aktDID);
 
         registry[_physicalID] = _deviceDID;
-        dids[_deviceDID] = _deviceDID;
+        dids[_deviceDID] = true;
 
         return _deviceDID;
     }
@@ -87,16 +90,4 @@ contract RegistryContract {
         );
     }
 
-    /// @notice Sets the address of the validation contract
-    /// @param _newAddress The address of the validation contract
-    function setValidationContractAddress(address _newAddress)
-        public
-        onlyOwner
-    {
-        if (validationContractAddress == address(0)) {
-            validationContractAddress = _newAddress;
-        } else {
-            revert("Validation contract address can only be set initially.");
-        }
-    }
 }

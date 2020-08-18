@@ -868,10 +868,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1042,
-                        1043
+                        1024,
+                        1025
                       ],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1024,
                       "src": "332:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1749,7 +1749,7 @@
                       "name": "ecrecover",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1031,
+                      "referencedDeclaration": 1013,
                       "src": "1128:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_ecrecover_pure$_t_bytes32_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_address_$",
@@ -1870,10 +1870,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1042,
-                        1043
+                        1024,
+                        1025
                       ],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1024,
                       "src": "1167:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2277,7 +2277,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1033,
+                          "referencedDeclaration": 1015,
                           "src": "1407:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -2373,7 +2373,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1041,
+                          "referencedDeclaration": 1023,
                           "src": "1466:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -2792,7 +2792,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "1711:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -3009,7 +3009,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "1824:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3333,7 +3333,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "2016:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -3496,7 +3496,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "1985:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -3962,7 +3962,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1033,
+                            "referencedDeclaration": 1015,
                             "src": "2355:9:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -4038,7 +4038,7 @@
                         "name": "now",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1041,
+                        "referencedDeclaration": 1023,
                         "src": "2392:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4136,7 +4136,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1041,
+                          "referencedDeclaration": 1023,
                           "src": "2470:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -4315,7 +4315,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "2530:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -4584,7 +4584,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "2680:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -4994,7 +4994,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "2933:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -5191,7 +5191,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "2902:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -5743,7 +5743,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1033,
+                            "referencedDeclaration": 1015,
                             "src": "3308:9:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -5808,7 +5808,7 @@
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1041,
+                      "referencedDeclaration": 1023,
                       "src": "3345:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -5874,7 +5874,7 @@
                         "name": "now",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1041,
+                        "referencedDeclaration": 1023,
                         "src": "3412:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -6032,7 +6032,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "3461:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -6275,7 +6275,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "3602:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -6642,7 +6642,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "3833:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -6822,7 +6822,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "3802:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -7310,7 +7310,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1041,
+                          "referencedDeclaration": 1023,
                           "src": "4223:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -7489,7 +7489,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "4283:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -7758,7 +7758,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "4422:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -8168,7 +8168,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "4652:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -8365,7 +8365,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "4621:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -9048,7 +9048,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "5071:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -9291,7 +9291,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "5201:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -9658,7 +9658,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "5408:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -9838,7 +9838,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "5377:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -10622,10 +10622,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1042,
-                        1043
+                        1024,
+                        1025
                       ],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1024,
                       "src": "332:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -11503,7 +11503,7 @@
                       "name": "ecrecover",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1031,
+                      "referencedDeclaration": 1013,
                       "src": "1128:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_ecrecover_pure$_t_bytes32_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_address_$",
@@ -11624,10 +11624,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1042,
-                        1043
+                        1024,
+                        1025
                       ],
-                      "referencedDeclaration": 1042,
+                      "referencedDeclaration": 1024,
                       "src": "1167:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -12031,7 +12031,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1033,
+                          "referencedDeclaration": 1015,
                           "src": "1407:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -12127,7 +12127,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1041,
+                          "referencedDeclaration": 1023,
                           "src": "1466:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -12546,7 +12546,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "1711:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -12763,7 +12763,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "1824:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -13087,7 +13087,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "2016:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -13250,7 +13250,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "1985:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -13716,7 +13716,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1033,
+                            "referencedDeclaration": 1015,
                             "src": "2355:9:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -13792,7 +13792,7 @@
                         "name": "now",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1041,
+                        "referencedDeclaration": 1023,
                         "src": "2392:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -13890,7 +13890,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1041,
+                          "referencedDeclaration": 1023,
                           "src": "2470:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -14069,7 +14069,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "2530:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -14338,7 +14338,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "2680:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -14748,7 +14748,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "2933:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -14945,7 +14945,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "2902:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -15497,7 +15497,7 @@
                             "name": "keccak256",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1033,
+                            "referencedDeclaration": 1015,
                             "src": "3308:9:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -15562,7 +15562,7 @@
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1041,
+                      "referencedDeclaration": 1023,
                       "src": "3345:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -15628,7 +15628,7 @@
                         "name": "now",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1041,
+                        "referencedDeclaration": 1023,
                         "src": "3412:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -15786,7 +15786,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "3461:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -16029,7 +16029,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "3602:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -16396,7 +16396,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "3833:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -16576,7 +16576,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "3802:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -17064,7 +17064,7 @@
                           "name": "now",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1041,
+                          "referencedDeclaration": 1023,
                           "src": "4223:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -17243,7 +17243,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "4283:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -17512,7 +17512,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "4422:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -17922,7 +17922,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "4652:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -18119,7 +18119,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "4621:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -18802,7 +18802,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1029,
+                        "referencedDeclaration": 1011,
                         "src": "5071:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -19045,7 +19045,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1039,
+                          "referencedDeclaration": 1021,
                           "src": "5201:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -19412,7 +19412,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1052,
+                        "referencedDeclaration": 1034,
                         "src": "5408:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_EthereumDIDRegistry_$710",
@@ -19592,7 +19592,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1033,
+                      "referencedDeclaration": 1015,
                       "src": "5377:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -20141,7 +20141,7 @@
     }
   },
   "schemaVersion": "3.2.2",
-  "updatedAt": "2020-08-12T14:02:00.595Z",
+  "updatedAt": "2020-08-18T12:14:12.360Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

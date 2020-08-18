@@ -17,7 +17,7 @@ contract ValidationContract {
     }
 
     mapping(bytes32 => mapping(bytes32 => bool)) internal enabled;
-    mapping(bytes32 => bytes32) public pids;
+    mapping(bytes32 => bool) public pids;
 
     /// @notice A function to register physicalIDs
     /// @param _aktDID The DID of the Activation Device to be allowed to register a Device DID for this physicalID
@@ -31,10 +31,10 @@ contract ValidationContract {
             "This phyisicalId has already been entered for registering"
         );
 
-        require(pids[_physicalID] == 0, "This PID already exists!");
+        require(pids[_physicalID] == false, "This PID already exists!");
 
         enabled[_aktDID][_physicalID] = true;
-        pids[_physicalID] = _physicalID;
+        pids[_physicalID] = true;
     }
 
     /// @notice A function to check if a physicalID is valid to be registered

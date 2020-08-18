@@ -7,6 +7,7 @@ const config = require('../server/config/config');
 
 const issuingAuthorityAddress = '0x5AEDA56215b167893e80B4fE645BA6d5Bab767DE';
 const validationContractAddress = '0xf7e3e47e06f1bddecb1b2f3a7f60b6b25fd2e233';
+const defaultAccountAddress = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57';
 
 const provider = new Web3.providers.WebsocketProvider(
     config.app.provider,
@@ -40,13 +41,24 @@ module.exports = {
 
         return txObj
     },
-    createAktDID() {
+     async createAktDID() {
 
-        const keyPair = new EthrDID.createKeyPair();
-        const aktDID = new EthrDID({ address: keyPair.address, privateKey: keyPair.privateKey, provider })
+        var newAccount = await this.createAccount();
 
-        return aktDID
+        const aktDID = new EthrDID({ address: newAccount, privateKey: newAccount.privateKey, provider })
 
+        return aktDID.did
+    },
+    async createAccount(){
+        const newAccount = await web3.eth.personal.newAccount('!@password');
+
+        await web3.eth.sendTransaction({from: defaultAccountAddress, to: newAccount, value: 100000000000000000}, function(error, result) {
+            
+        });
+
+        await web3.eth.personal.unlockAccount(newAccount,'!@password', 15000)
+
+        return newAccount
     }
 
 }
